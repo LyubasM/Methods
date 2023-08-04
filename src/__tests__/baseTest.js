@@ -12,7 +12,7 @@ test('Check name while character creating', () => {
 });
 
 test('Check throwing error while character creating', () => {
-  expect(() => { const test = new Character('Teo', 'Bwmen'); }).toThrow('Введены некорректные параметры');
+  expect(() => { const test = (name, type) => new Character(name, type); test('Teo', 'Bwman'); }).toThrow('Введены некорректные параметры');
 });
 
 test('Creating a new character', () => {
@@ -22,8 +22,6 @@ test('Creating a new character', () => {
     type: 'Bowman',
     health: 100,
     level: 1,
-    attack: '',
-    defence: '',
   };
   expect(result).toEqual(expected);
 });
